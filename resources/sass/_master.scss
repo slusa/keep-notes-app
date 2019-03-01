@@ -1,0 +1,38 @@
+.header {
+    background-color: $orange;
+}
+
+.header__add-icon {
+    font-size: 40px;
+    color: #fff;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    background-color: $orange;
+    width: 100vw;
+    font-weight: 600;
+}
+
+.note {
+    color: #fff;
+}
+
+.note__panel {
+
+    .card-title {
+        max-width: 60%;
+    }
+
+    .note__panel-buttons {
+        min-width: 40%;
+    }
+}
+
+.note__icon {
+    font-size: 26px;
+    color: #fff;
+}
