@@ -91,4 +91,23 @@ class NotesController extends Controller
         $note->delete();
         return redirect('notes');
     }
+
+    // Change Priority of the note
+    public function changePriority($id) {
+        $note = Note::findOrFail($id);
+        if($note && $note->priority == 0) {
+            $note->priority = 1;
+            $note->save();
+        } else {
+            $note->priority = 0;
+            $note->save();
+        }
+        return redirect('notes');
+    }
 }
+
+
+
+
+
+
