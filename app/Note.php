@@ -11,4 +11,9 @@ class Note extends Model
         'content',
         'user_id'
     ];
+
+    // note has an author
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 }

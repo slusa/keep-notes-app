@@ -11,8 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+// Route::get('notes/destroy/{id}','NotesController@destroy');
+
+Route::get('notes/changePriority/{id}','NotesController@changePriority');
+
+Route::get('/', 'NotesController@index');
 
 Route::resource('notes', 'NotesController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
+

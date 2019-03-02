@@ -26,8 +26,11 @@
         <div class="container-fluid">
             <header>
                 <div class="row header">
-                    <div class="col-9 p-3">
-                        <h1 class="m-0">Keep notes</h1>
+                    <div class="col-7 p-3">
+                        <h1 class="m-0 text-white">Keep notes</h1>
+                    </div>
+                    <div class="col-2 p-3">
+                        <span class="m-0 text-white"></span>
                     </div>
                     <div class="col p-3 d-flex justify-content-end">
                         <button type="button" class="btn h-100 p-0"><a href="{{ url('notes/create') }}"><i class="far fa-plus-square header__add-icon"></i></a></button>

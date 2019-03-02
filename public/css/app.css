@@ -10678,15 +10678,7 @@ a.text-dark:focus {
   color: #fff;
 }
 
-.note__panel .card-title {
-  max-width: 60%;
-}
-
-.note__panel .note__panel-buttons {
-  min-width: 40%;
-}
-
-.note__icon {
+.note__top-icon {
   font-size: 26px;
   color: #fff;
 }
