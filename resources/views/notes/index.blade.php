@@ -9,7 +9,7 @@
                     <div class="d-flex justify-content-between note__panel">
                         <h4 class="card-title mt-3">{{ $note->title }}</h4>
                         <div class="note__panel-buttons d-flex justify-content-end">
-                            <button type="button" class="btn p-3"><a href="{{ url('notes', $note->id) }}"><i class="fas fa-trash-alt note__icon"></i></a></button>
+                            <button type="button" class="btn p-3"><a href="{{ url('notes/destroy', $note->id) }}"><i class="fas fa-trash-alt note__icon"></i></a></button>
                             <button type="button" class="btn p-3"><a href="{{ url('notes', $note->id) }}"><i class="fas fa-marker note__icon"></i></a></button>
                         </div>
                     </div>

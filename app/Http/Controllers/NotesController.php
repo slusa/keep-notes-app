@@ -14,7 +14,7 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $notes = Note::get();
+        $notes = Note::get()->where('user_id', auth()->user()->id);
         return view('notes.index')->with('notes', $notes);
     }
 
@@ -61,8 +61,8 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        $note = Note::findOrFail($id);
-        return view('notes.add')->with('note', $note);
+        // $note = Note::findOrFail($id);
+        // return view('notes.add')->with('note', $note);
     }
 
     /**
@@ -87,6 +87,8 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::findOrFail($id);
+        $note->delete();
+        return redirect('notes');
     }
 }

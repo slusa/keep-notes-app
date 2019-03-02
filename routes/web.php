@@ -11,6 +11,8 @@
 |
 */
 
+//Route::get('notes/destroy/{id}','NotesController@destroy');
+
 Route::get('/', 'NotesController@index');
 
 Route::resource('notes', 'NotesController');

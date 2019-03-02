@@ -1,4 +1,4 @@
-    {!! Form::hidden('user_id', 3, ['class' => 'form-control', 'placeholder' => 'Tytuł notatki']) !!}
+{!! Form::hidden('user_id', auth()->user()->id) !!}
 <div class="form-group">
     {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Tytuł notatki']) !!}
 </div>
@@ -6,4 +6,4 @@
     {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Treść notatki']) !!}
 </div>
 
-{!! Form::submit('Save', ['class' => 'btn btn-success note__icon float-right']) !!}
+{!! Form::submit($submitText, ['class' => 'btn btn-success note__icon float-right']) !!}

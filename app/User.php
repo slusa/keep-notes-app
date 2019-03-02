@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // user has many own notes
+    public function notes() {
+        return $this->hasMany('App\Note');
+    }
 }
