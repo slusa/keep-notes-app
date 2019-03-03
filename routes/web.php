@@ -11,7 +11,7 @@
 |
 */
 
-// Route::get('notes/destroy/{id}','NotesController@destroy');
+Route::get('notes/destroy/{id}','NotesController@destroyModal');
 
 Route::get('notes/changePriority/{id}','NotesController@changePriority');
 
