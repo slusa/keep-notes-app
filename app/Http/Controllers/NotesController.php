@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Note;
+use Illuminate\Support\Facades\Auth;
 
 class NotesController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,8 @@ class NotesController extends Controller
      */
     public function index()
     {
-        $notes = Note::get()->where('user_id', auth()->user()->id);
+        $id = Auth::id();
+        $notes = Note::get()->where('user_id', $id);
         return view('notes.index')->with('notes', $notes);
     }
 
