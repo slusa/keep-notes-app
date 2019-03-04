@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="row">
+<div class="row mb-5">
     @foreach ($notes as $note)
         <div class="col-xs-12 col-md-6 col-lg-4 mt-3 mb-3">
             <div class="card bg-secondary note">
