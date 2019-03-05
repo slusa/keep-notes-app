@@ -24,7 +24,7 @@
                             <button type="button" class="btn p-3"><a href="{{ url('notes', $note->id) }}"><i class="fas fa-marker note__top-icon"></i></a></button>
                         </div>
                     </div>
-                    <p class="card-text pr-3 pl-3">{{ $note->content }}</p>
+                    <p class="card-text pr-3 pl-3">{{ str_limit($note->content, 300) }}</p>
                     <div class="d-flex justify-content-start">
                         <button type="button" class="btn p-3"><i class="fas fa-trash-alt note__top-icon deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i></button>
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
