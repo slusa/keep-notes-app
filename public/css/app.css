@@ -10655,6 +10655,14 @@ a.text-dark:focus {
   }
 }
 
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  color: #fff;
+  margin: 0;
+}
+
 .header {
   background-color: #f6993f;
 }
@@ -10676,9 +10684,15 @@ a.text-dark:focus {
 
 .note {
   color: #fff;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.note__top-icon {
+.note:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.note__icon {
   font-size: 26px;
   color: #fff;
 }
