@@ -10668,6 +10668,10 @@ body {
   background-color: #374B4A;
 }
 
+.header__title {
+  font-size: 2rem;
+}
+
 .header__add-icon {
   font-size: 2rem;
   color: #fff;
