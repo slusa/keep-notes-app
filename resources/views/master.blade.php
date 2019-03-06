@@ -5,32 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Keep notes</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #fff;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-        </style>
     </head>
     <body>
         <div class="container-fluid">
             <header>
                 <div class="row header">
-                    <div class="col-7 p-3">
-                        <h1 class="m-0 text-white">Keep notes</h1>
-                    </div>
-                    <div class="col-2 p-3">
-                        <span class="m-0 text-white"></span>
+                    <div class="col-9 p-3">
+                        <h1 class="m-0 text-white header__title">Keep notes</h1>
                     </div>
                     <div class="col p-3 d-flex justify-content-end">
                         <button type="button" class="btn h-100 p-0"><a href="{{ url('notes/create') }}"><i class="far fa-plus-square header__add-icon"></i></a></button>

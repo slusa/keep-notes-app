@@ -20,7 +20,7 @@ class NotesController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $notes = Note::get()->where('user_id', $id);
+        $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
         return view('notes.index')->with('notes', $notes);
     }
 
