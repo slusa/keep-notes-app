@@ -53,6 +53,11 @@ html, body {
     font-weight: 700;
 }
 
-.note__string {
+.note__form {
+    background-color: $accent-color-4;
+}
+
+.note__form-btn {
     font-size: 1.1rem;
+    background-color: $body-bg;
 }

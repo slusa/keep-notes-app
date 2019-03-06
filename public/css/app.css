@@ -10711,7 +10711,12 @@ body {
   font-weight: 700;
 }
 
-.note__string {
+.note__form {
+  background-color: #525760;
+}
+
+.note__form-btn {
   font-size: 1.1rem;
+  background-color: #f8fafc;
 }
 
