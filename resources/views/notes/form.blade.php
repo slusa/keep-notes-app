@@ -6,4 +6,4 @@
     {!! Form::textarea('content', null, ['class' => 'form-control', 'placeholder' => 'Treść notatki']) !!}
 </div>
 
-{!! Form::submit($submitText, ['class' => 'btn btn-success note__icon float-right']) !!}
+{!! Form::submit($submitText, ['class' => 'btn btn-success note__string float-right font-weight-bold']) !!}

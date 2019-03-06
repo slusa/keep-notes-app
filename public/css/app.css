@@ -10661,28 +10661,34 @@ body {
   background-color: #fff;
   color: #fff;
   margin: 0;
+  font-size: 16px;
 }
 
 .header {
-  background-color: #f6993f;
+  background-color: #374B4A;
 }
 
 .header__add-icon {
-  font-size: 40px;
+  font-size: 2rem;
   color: #fff;
+}
+
+.card-title {
+  font-size: 1.1rem;
 }
 
 .footer {
   position: fixed;
   bottom: 0;
   color: #fff;
-  font-size: 18px;
-  background-color: #f6993f;
+  font-size: 1rem;
+  background-color: #374B4A;
   width: 100vw;
   font-weight: 600;
 }
 
 .note {
+  background-color: #8B8BAE;
   color: #fff;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -10693,7 +10699,15 @@ body {
 }
 
 .note__icon {
-  font-size: 26px;
+  font-size: 1.3rem;
   color: #fff;
+}
+
+.note_date {
+  font-weight: 700;
+}
+
+.note__string {
+  font-size: 1.1rem;
 }
 
