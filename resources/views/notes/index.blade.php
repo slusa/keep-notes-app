@@ -28,7 +28,7 @@
                     <p class="card-text pr-3 pl-3 text-justify">{{ str_limit($note->content, 300) }}</p>
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn p-3"><i class="fas fa-trash-alt note__icon deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i></button>
-                        <button type="button" class="btn p-3"><i class="fas fa-palette note__icon deleteModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color-link="{{ url('notes.changeColor', $note->id) }}"></i></button>
+                        <button type="button" class="btn p-3"><i class="fas fa-palette note__icon colorModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color-link="{{ url('notes/changeColor', $note->id) }}"></i></button>
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -61,25 +61,36 @@
                                     </button>
                                 </div>
                                 <div class="modal-body text-secondary">
-                                    <span class="text-primary font-weight-bold modalTitle"></span>
+                                    <span class="text-secondary text-primary font-weight-bold modalTitle"></span>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#324dce" type="hidden">
                                         <button type="submit" class="btn" style="background-color: #324dce;">1</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
+                                        <input name="color" value="#356E7C" type="hidden">
+                                        <button type="submit" class="btn" style="background-color: #356E7C;">2</button>
+                                    {!! Form::close() !!}
+                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#FF8811" type="hidden">
-                                        <button type="submit" class="btn" style="background-color: #FF8811;">2</button>
+                                        <button type="submit" class="btn" style="background-color: #FF8811;">3</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#392F5A" type="hidden">
-                                        <button type="submit" class="btn" style="background-color: #392F5A;">3</button>
+                                        <button type="submit" class="btn" style="background-color: #392F5A;">4</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#731963" type="hidden">
-                                        <button type="submit" class="btn" style="background-color: #731963;">4</button>
+                                        <button type="submit" class="btn" style="background-color: #731963;">5</button>
+                                    {!! Form::close() !!}
+                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
+                                        <input name="color" value="#72483D" type="hidden">
+                                        <button type="submit" class="btn" style="background-color: #72483D;">6</button>
+                                    {!! Form::close() !!}
+                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
+                                        <input name="color" value="#7248556B8C3D" type="hidden">
+                                        <button type="submit" class="btn" style="background-color: #556B8C;">7</button>
                                     {!! Form::close() !!}
                                     </form>
                                 </div>
