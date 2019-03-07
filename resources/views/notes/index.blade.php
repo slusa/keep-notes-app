@@ -28,6 +28,7 @@
                     <p class="card-text pr-3 pl-3 text-justify">{{ str_limit($note->content, 300) }}</p>
                     <div class="d-flex justify-content-start">
                         <button type="button" class="btn p-3"><i class="fas fa-trash-alt note__icon deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i></button>
+                        <p class="mb-0 mt-3 mr-3 text-right w-100">Zakupy</p>
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
