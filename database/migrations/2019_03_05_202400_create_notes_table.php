@@ -20,6 +20,7 @@ class CreateNotesTable extends Migration
             $table->string('title');
             $table->integer('priority')->default(0);
             $table->text('content');
+            $table->string('color');
             $table->timestamps();
         });
     }

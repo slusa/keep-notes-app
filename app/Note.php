@@ -9,7 +9,8 @@ class Note extends Model
     protected $fillable = [
         'title',
         'content',
-        'user_id'
+        'user_id',
+        'color'
     ];
 
     // note has an author

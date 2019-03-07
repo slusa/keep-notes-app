@@ -110,6 +110,16 @@ class NotesController extends Controller
         }
         return redirect('notes');
     }
+
+    // Change color
+    public function changeColor($id, Request $request)
+    {
+        $note = Note::findOrFail($id);
+        $note->color = $request->color;
+        $note->save();
+        return redirect('notes');
+    }
+
 }
 
 
