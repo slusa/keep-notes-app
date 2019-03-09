@@ -11,3 +11,9 @@ $("body").on("click",".colorModal",function(){
     var form = $("#colorModal").find("form");
     form.attr('action', $(this).data('color-link'));
 });
+
+$("body").on("click",".noteColor",function(){
+    var title = $(this);
+    console.log(title);
+});
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Note;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class NotesController extends Controller
 {
@@ -31,6 +32,7 @@ class NotesController extends Controller
      */
     public function create()
     {
+        Session::flash('note_adding', 'yes');
         return view('notes.add');
     }
 
@@ -56,6 +58,7 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
+        Session::flash('note_editing', 'yes');
         return view('notes.edit')->with('note', $note);
     }
 

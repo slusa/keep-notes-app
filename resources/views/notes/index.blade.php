@@ -88,7 +88,7 @@
                                         <button type="submit" class="btn m-1 text-white" style="background-color: #72483D;">6</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#7248556B8C3D" type="hidden">
+                                        <input name="color" value="#556B8C" type="hidden">
                                         <button type="submit" class="btn m-1 text-white" style="background-color: #556B8C;">7</button>
                                     {!! Form::close() !!}
                                     </form>
