@@ -33,7 +33,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-secondary">Usuwanie notatki</h5>
+                                    <h5 class="modal-title text-secondary">Usuń notatkę</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -54,7 +54,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title text-secondary">Zmienianie koloru notatki</h5>
+                                    <h5 class="modal-title text-secondary">Zmień kolor notatki</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -64,12 +64,12 @@
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center flex-wrap">
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#324dce" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #324dce;">1</button>
+                                        <input name="color" value="#3C91E6" type="hidden">
+                                        <button type="submit" class="btn m-1 text-white" style="background-color: #3C91E6;">1</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#356E7C" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #356E7C;">2</button>
+                                        <input name="color" value="#1A936F" type="hidden">
+                                        <button type="submit" class="btn m-1 text-white" style="background-color: #1A936F;">2</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#FF8811" type="hidden">
@@ -80,8 +80,8 @@
                                         <button type="submit" class="btn m-1 text-white" style="background-color: #392F5A;">4</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#731963" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #731963;">5</button>
+                                        <input name="color" value="#FF0F80" type="hidden">
+                                        <button type="submit" class="btn m-1 text-white" style="background-color: #FF0F80;">5</button>
                                     {!! Form::close() !!}
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#72483D" type="hidden">
@@ -90,6 +90,10 @@
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
                                         <input name="color" value="#556B8C" type="hidden">
                                         <button type="submit" class="btn m-1 text-white" style="background-color: #556B8C;">7</button>
+                                    {!! Form::close() !!}
+                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
+                                        <input name="color" value="#F64740" type="hidden">
+                                        <button type="submit" class="btn m-1 text-white" style="background-color: #F64740;">8</button>
                                     {!! Form::close() !!}
                                     </form>
                                 </div>

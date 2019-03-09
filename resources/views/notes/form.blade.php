@@ -8,7 +8,8 @@
 
 @if (Session::has('note_editing'))
     <div class="form-group">
-        {!! Form::select('color', array('#324dce' => '1', '#356E7C' => '2', '#FF8811' => '3', '#392F5A' => '4', '#731963' => '5', '#72483D' => '6', '#556B8C' => '7'), $note->color, ['class' => 'form-control noteColor']) !!}
+        {!! Form::label('color', 'Kolor notatki'); !!}
+        {!! Form::select('color', array('#3C91E6' => 'niebieski', '#1A936F' => 'zielony', '#FF8811' => 'pomarańczowy', '#392F5A' => 'fioletowy', '#FF0F80' => 'różowy', '#72483D' => 'brązowy', '#556B8C' => 'szary', '#F64740' => 'czerwony'), $note->color, ['class' => 'form-control noteColor']) !!}
     </div>
 @elseif (Session::has('note_adding'))
     {!! Form::hidden('color', '#edc456') !!}
