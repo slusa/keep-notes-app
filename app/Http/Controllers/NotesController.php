@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreNoteRequest;
 use App\Note;
 use Illuminate\Support\Facades\Auth;
+use Session;
 
 class NotesController extends Controller
 {
@@ -21,7 +23,11 @@ class NotesController extends Controller
     {
         $id = Auth::id();
         $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
-        return view('notes.index')->with('notes', $notes);
+        if (count($notes) == 0) {
+            return view('notes.empty');
+        } else {
+            return view('notes.index')->with('notes', $notes);
+        }
     }
 
     /**
@@ -31,6 +37,8 @@ class NotesController extends Controller
      */
     public function create()
     {
+        Session::flash('note_adding', 'yes');
+        Session::forget('note_editing');
         return view('notes.add');
     }
 
@@ -40,9 +48,9 @@ class NotesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNoteRequest $request)
     {
-        $note = new Note($request->all());
+        $note = new Note($request->validated());
         $note->save();
         return redirect('notes');
     }
@@ -56,6 +64,7 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
+        Session::flash('note_editing', 'yes');
         return view('notes.edit')->with('note', $note);
     }
 

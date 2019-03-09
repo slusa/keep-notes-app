@@ -13,11 +13,17 @@
         <div class="container-fluid">
             <header>
                 <div class="row header">
-                    <div class="col-9 p-3">
+                    <div class="p-3">
+                        <button type="button" class="btn h-100 p-0"><a href="{{ url('notes') }}" title="Wszystkie notatki"><i class="fas fa-home header__add-icon"></i></a></button>
+                    </div>
+                    <div class="d-none d-lg-block col col-md-7 col-lg-9 col-xl-10 p-3">
                         <h1 class="m-0 text-white header__title">Keep notes</h1>
                     </div>
-                    <div class="col p-3 d-flex justify-content-end">
-                        <button type="button" class="btn h-100 p-0"><a href="{{ url('notes/create') }}"><i class="far fa-plus-square header__add-icon"></i></a></button>
+                    <div class="p-3 d-flex justify-content-end">
+                        <button type="button" class="btn h-100 p-0"><a href="{{ url('notes/create') }}" title="Utwórz notatkę"><i class="far fa-plus-square header__add-icon"></i></a></button>
+                    </div>
+                    <div class="p-3 d-flex justify-content-end">
+                        <button type="button" class="btn h-100 p-0"><a href="{{ url('logout') }}" title="Wyloguj się"><i class="fas fa-sign-out-alt header__add-icon"></i></a></button>
                     </div>
                 </div>
             </header>
