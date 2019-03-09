@@ -1,7 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="row mb-5">
+<div class="row pb-5 pt-5">
     @foreach ($notes as $note)
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-3 mb-3">
             <div class="card note" style="background-color: {{ $note->color }}">

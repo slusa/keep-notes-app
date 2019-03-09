@@ -10666,6 +10666,9 @@ body {
 
 .header {
   background-color: #374B4A;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
 }
 
 .header__title {

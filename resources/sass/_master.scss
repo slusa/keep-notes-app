@@ -8,6 +8,9 @@ html, body {
 
 .header {
     background-color: $accent-color-1;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
 }
 
 .header__title {
