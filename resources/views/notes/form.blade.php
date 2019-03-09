@@ -21,12 +21,14 @@
 @if (Session::has('note_editing'))
     <div class="form-group">
         {!! Form::label('color', 'Priorytet notatki: '); !!}
+        <br/>
         {!! Form::radio('priority', 0) !!} niski
         {!! Form::radio('priority', 1) !!} wysoki
     </div>
 @elseif (Session::has('note_adding'))
     <div class="form-group">
         {!! Form::label('color', 'Priorytet notatki: ', ['class' => 'font-weight-bold']); !!}
+        <br/>
         {!! Form::radio('priority', 0, true) !!} <b>niski</b>
         {!! Form::radio('priority', 1) !!} <b>wysoki</b>
     </div>
