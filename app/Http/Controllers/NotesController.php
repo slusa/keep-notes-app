@@ -23,7 +23,11 @@ class NotesController extends Controller
     {
         $id = Auth::id();
         $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
-        return view('notes.index')->with('notes', $notes);
+        if (count($notes) == 0) {
+            return view('notes.empty');
+        } else {
+            return view('notes.index')->with('notes', $notes);
+        }
     }
 
     /**
