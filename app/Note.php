@@ -10,7 +10,8 @@ class Note extends Model
         'title',
         'content',
         'user_id',
-        'color'
+        'color',
+        'priority'
     ];
 
     // note has an author

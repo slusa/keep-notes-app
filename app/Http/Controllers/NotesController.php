@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreNoteRequest;
 use App\Note;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -33,6 +34,7 @@ class NotesController extends Controller
     public function create()
     {
         Session::flash('note_adding', 'yes');
+        Session::forget('note_editing');
         return view('notes.add');
     }
 
@@ -42,9 +44,9 @@ class NotesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNoteRequest $request)
     {
-        $note = new Note($request->all());
+        $note = new Note($request->validated());
         $note->save();
         return redirect('notes');
     }

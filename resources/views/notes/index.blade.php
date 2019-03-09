@@ -28,7 +28,7 @@
                     <p class="card-text pr-3 pl-3 text-justify">{{ str_limit($note->content, 300) }}</p>
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn p-3"><i class="fas fa-trash-alt note__icon deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i></button>
-                        <button type="button" class="btn p-3"><i class="fas fa-palette note__icon colorModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color-link="{{ url('notes/changeColor', $note->id) }}"></i></button>
+                        <button type="button" class="btn p-3"><i class="fas fa-palette note__icon colorModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color="{{ $note->color }}" data-color-link="{{ url('notes/changeColor', $note->id) }}"></i></button>
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -60,7 +60,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body text-secondary">
-                                    <span class="text-primary font-weight-bold modalTitle"></span>
+                                    <span class="font-weight-bold modalTitle"></span>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center flex-wrap">
                                     {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
