@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNoteRequest;
 use App\Note;
+use App\Color;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
@@ -39,7 +40,8 @@ class NotesController extends Controller
     {
         Session::flash('note_adding', 'yes');
         Session::forget('note_editing');
-        return view('notes.add');
+        $colors = Color::pluck('color','hashtag')->all();
+        return view('notes.add')->with('colors', $colors);
     }
 
     /**
@@ -64,8 +66,9 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
+        $colors = Color::pluck('color','hashtag')->all();
         Session::flash('note_editing', 'yes');
-        return view('notes.edit')->with('note', $note);
+        return view('notes.edit', compact('note', 'colors'));
     }
 
     /**
