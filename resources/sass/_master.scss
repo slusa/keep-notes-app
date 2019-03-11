@@ -13,12 +13,16 @@ html, body {
     z-index: 1000;
 }
 
-.header__title {
-    font-size: 2rem;
+.header__app:hover {
+    text-decoration: none;
 }
 
-.header__add-icon {
-    font-size: 2rem;
+.header__app-name {
+    font-size: 1.7rem;
+}
+
+.header__top-icon {
+    font-size: 1.9rem;
     color: #fff;
 }
 

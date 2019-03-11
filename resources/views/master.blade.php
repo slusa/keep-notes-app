@@ -12,18 +12,13 @@
     <body>
         <div class="container-fluid">
             <header>
-                <div class="row header">
-                    <div class="p-2 pl-3 pr-3">
-                        <button type="button" class="btn h-100 p-0"><a href="{{ url('notes') }}" title="Wszystkie notatki"><i class="fas fa-home header__add-icon"></i></a></button>
+                <div class="row header p-2 pl-3 pr-3">
+                    <div class="col-9 col-md-2 p-0">
+                        <a href="{{ url('notes') }}" title="Pilnuj swoich notatek!" class="d-flex align-items-center header__app"><i class="mr-2 far fa-sticky-note header__top-icon"></i> <h1 class="m-0 text-white header__app-name">Keep notes</h1></a>
                     </div>
-                    <div class="d-none d-lg-block col col-md-7 col-lg-9 col-xl-10 p-2 pl-3 pr-3">
-                        <h1 class="m-0 text-white header__title">Keep notes</h1>
-                    </div>
-                    <div class="p-2 pl-3 pr-3 d-flex justify-content-end">
-                        <button type="button" class="btn h-100 p-0"><a href="{{ url('notes/create') }}" title="Utwórz notatkę"><i class="far fa-plus-square header__add-icon"></i></a></button>
-                    </div>
-                    <div class="p-2 pl-3 pr-3 d-flex justify-content-end">
-                        <button type="button" class="btn h-100 p-0"><a href="{{ url('logout') }}" title="Wyloguj się"><i class="fas fa-sign-out-alt header__add-icon"></i></a></button>
+                    <div class="col-3 p-0 d-flex align-items-center justify-content-end">
+                        <a href="{{ url('notes/create') }}" title="Utwórz notatkę"><i class="mr-3 far fa-plus-square header__top-icon"></i></a>
+                        <a href="{{ url('logout') }}" title="Wyloguj się"><i class="fas fa-sign-out-alt header__top-icon"></i></a>
                     </div>
                 </div>
             </header>
