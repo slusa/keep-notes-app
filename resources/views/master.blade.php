@@ -12,11 +12,11 @@
     <body>
         <div class="container-fluid">
             <header>
-                <div class="row header p-2 pl-3 pr-3">
-                    <div class="col-9 col-md-2 p-0">
+                <div class="row header p-2 pl-3 pr-3 w-100">
+                    <div class="col-9 col-sm-5 col-md-4 col-lg-3 col-xl-2 p-0">
                         <a href="{{ url('notes') }}" title="Pilnuj swoich notatek!" class="d-flex align-items-center header__app"><i class="mr-2 far fa-sticky-note header__top-icon"></i> <h1 class="m-0 text-white header__app-name">Keep notes</h1></a>
                     </div>
-                    <div class="col-3 p-0 d-flex align-items-center justify-content-end">
+                    <div class="col-3 col-sm-7 col-md-8 col-lg-9 col-xl-10 p-0 d-flex align-items-center justify-content-end">
                         <a href="{{ url('notes/create') }}" title="Utwórz notatkę"><i class="mr-3 far fa-plus-square header__top-icon"></i></a>
                         <a href="{{ url('logout') }}" title="Wyloguj się"><i class="fas fa-sign-out-alt header__top-icon"></i></a>
                     </div>
