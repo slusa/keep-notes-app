@@ -63,38 +63,13 @@
                                     <span class="font-weight-bold modalTitle"></span>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center flex-wrap">
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#3C91E6" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #3C91E6;">1</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#1A936F" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #1A936F;">2</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#FF8811" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #FF8811;">3</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#392F5A" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #392F5A;">4</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#FF0F80" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #FF0F80;">5</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#72483D" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #72483D;">6</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#556B8C" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #556B8C;">7</button>
-                                    {!! Form::close() !!}
-                                    {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-                                        <input name="color" value="#F64740" type="hidden">
-                                        <button type="submit" class="btn m-1 text-white" style="background-color: #F64740;">8</button>
-                                    {!! Form::close() !!}
+
+                                    @foreach ($colors as $color)
+                                        {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
+                                            <input name="color" value="{{ $color }}" type="hidden">
+                                            <button type="submit" class="btn m-1 p-3 text-white" style="background-color: {{ $color }};"></button>
+                                        {!! Form::close() !!}
+                                    @endforeach
                                     </form>
                                 </div>
                                 </div>

@@ -24,10 +24,11 @@ class NotesController extends Controller
     {
         $id = Auth::id();
         $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
+        $colors = Color::pluck('hashtag','color')->all();
         if (count($notes) == 0) {
             return view('notes.empty');
         } else {
-            return view('notes.index')->with('notes', $notes);
+            return view('notes.index', compact('notes', 'colors'));
         }
     }
 
