@@ -27,6 +27,7 @@
 
             <article class="pt-5 pb-5">
 
+                @yield('filter')
                 @yield('content')
 
             </article>

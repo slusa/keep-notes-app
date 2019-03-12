@@ -1,8 +1,6 @@
 @extends('master')
 @section('content')
 
-@yield('filter')
-
 @if (count($notesHigh) != 0)
 <h2 class="notes__section text-secondary mt-3">Notatki ważniejsze</h2>
 <div class="row pb-5 pt-1">
