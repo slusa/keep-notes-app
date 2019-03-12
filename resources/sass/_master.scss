@@ -18,7 +18,7 @@ html, body {
 }
 
 .header__app-name {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .header__top-icon {
@@ -26,8 +26,59 @@ html, body {
     color: #fff;
 }
 
-.card-title {
+.notes__section {
+    font-size: 1.7rem;
+}
+
+.note {
+    background-color: $accent-color-4;
+    color: #fff;
+    transition:all .3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+    min-height: 250px;
+    position: relative;
+}
+
+.note:hover{
+    box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
+}
+
+.note__title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.note__content {
+    font-size: .9rem;
+}
+
+.note__icon {
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.note__icon:hover {
+    cursor: pointer;
+}
+
+.note__date {
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.note__bottom-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.note__form {
+    background-color: $accent-color-4;
+}
+
+.note__form-btn {
     font-size: 1.1rem;
+    background-color: $body-bg;
 }
 
 .footer {
@@ -38,33 +89,4 @@ html, body {
     background-color: $accent-color-1;
     width: 100vw;
     font-weight: 600;
-}
-
-.note {
-    background-color: $accent-color-4;
-    color: #fff;
-    transition:all .3s cubic-bezier(.25,.8,.25,1);
-    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
-}
-
-.note:hover{
-    box-shadow:0 14px 28px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
-}
-
-.note__icon {
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-.note_date {
-    font-weight: 700;
-}
-
-.note__form {
-    background-color: $accent-color-4;
-}
-
-.note__form-btn {
-    font-size: 1.1rem;
-    background-color: $body-bg;
 }

@@ -23,12 +23,13 @@ class NotesController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
+        $notesLow = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 0);
+        $notesHigh = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 1);
         $colors = Color::pluck('hashtag','color')->all();
-        if (count($notes) == 0) {
+        if (count($notesLow) + count($notesHigh) == 0) {
             return view('notes.empty');
         } else {
-            return view('notes.index', compact('notes', 'colors'));
+            return view('notes.index', compact('notesLow', 'notesHigh', 'colors'));
         }
     }
 
