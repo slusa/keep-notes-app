@@ -14,11 +14,11 @@
                             <a href="{{ url('notes/changePriority', $note->id) }}">
                                 @switch($note->priority)
                                     @case(0)
-                                        <i class="p-2 note__icon far fa-star"></i>
+                                        <i class="p-2 pr-3 note__icon far fa-star"></i>
                                         @break
 
                                     @case(1)
-                                        <i class="p-2 note__icon fas fa-star"></i>
+                                        <i class="p-2 pr-3 note__icon fas fa-star"></i>
                                         @break
                                     @default
                                 @endswitch
@@ -97,11 +97,11 @@
                                 <a href="{{ url('notes/changePriority', $note->id) }}">
                                     @switch($note->priority)
                                         @case(0)
-                                            <i class="p-2 note__icon far fa-star"></i>
+                                            <i class="p-2 pr-3 note__icon far fa-star"></i>
                                             @break
 
                                         @case(1)
-                                            <i class="p-2 note__icon fas fa-star"></i>
+                                            <i class="p-2 pr-3 note__icon fas fa-star"></i>
                                             @break
                                         @default
                                     @endswitch
