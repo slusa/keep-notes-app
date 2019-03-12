@@ -29,7 +29,7 @@
                     </div>
                     <p class="card-text pr-2 pl-2 pb-4 text-justify note__content">{{ str_limit($note->content, 300) }}</p>
                     <div class="d-flex justify-content-between align-items-center note__bottom-section">
-                        <i class="p-2 note__icon fas fa-trash-alt deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i>
+                        <i class="p-2 note__icon fas fa-trash-alt deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}" data-color="{{ $note->color }}"></i>
                         <p class="text-center note__date mb-0">{{ $note->updated_at->format('Y-m-d H:i') }}</p>
                         <i class="p-2 note__icon fas fa-palette colorModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color="{{ $note->color }}" data-color-link="{{ url('notes/changeColor', $note->id) }}"></i>
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
@@ -41,8 +41,8 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body text-secondary">
-                                    <span class="text-primary font-weight-bold modalTitle"></span>
+                                <div class="modal-body">
+                                    <span class="font-weight-bold modalTitle"></span>
                                 </div>
                                 <div class="modal-footer">
                                     {!! Form::open(['method' => 'DELETE', 'action' => ['NotesController@destroy', $note->id]]) !!}
@@ -62,7 +62,7 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body text-secondary">
+                                <div class="modal-body">
                                     <span class="font-weight-bold modalTitle"></span>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-center flex-wrap">
@@ -112,7 +112,7 @@
                         </div>
                         <p class="card-text pr-2 pl-2 pb-4 text-justify note__content">{{ str_limit($note->content, 300) }}</p>
                         <div class="d-flex justify-content-between align-items-center note__bottom-section">
-                            <i class="p-2 note__icon fas fa-trash-alt deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}"></i>
+                            <i class="p-2 note__icon fas fa-trash-alt deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}" data-color="{{ $note->color }}"></i>
                             <p class="text-center note__date mb-0">{{ $note->updated_at->format('Y-m-d H:i') }}</p>
                             <i class="p-2 note__icon fas fa-palette colorModal" data-toggle="modal" data-target="#colorModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-color="{{ $note->color }}" data-color-link="{{ url('notes/changeColor', $note->id) }}"></i>
                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
@@ -124,8 +124,8 @@
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body text-secondary">
-                                        <span class="text-primary font-weight-bold modalTitle"></span>
+                                    <div class="modal-body">
+                                        <span class="font-weight-bold modalTitle"></span>
                                     </div>
                                     <div class="modal-footer">
                                         {!! Form::open(['method' => 'DELETE', 'action' => ['NotesController@destroy', $note->id]]) !!}
@@ -145,7 +145,7 @@
                                         <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body text-secondary">
+                                    <div class="modal-body">
                                         <span class="font-weight-bold modalTitle"></span>
                                     </div>
                                     <div class="modal-footer d-flex justify-content-center flex-wrap">
