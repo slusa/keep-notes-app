@@ -15,6 +15,8 @@ Route::get('notes/changePriority/{id}','NotesController@changePriority');
 
 Route::post('notes/changeColor/{id}','NotesController@changeColor');
 
+Route::get('notes/filterColor/{color}','NotesController@filterColor');
+
 Route::get('/', 'NotesController@index');
 
 Route::resource('notes', 'NotesController');

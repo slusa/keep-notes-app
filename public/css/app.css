@@ -10666,19 +10666,90 @@ body {
 
 .header {
   background-color: #374B4A;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  height: 50px;
 }
 
-.header__title {
-  font-size: 2rem;
+.header__filter {
+  top: 50px;
+  position: fixed;
+  width: 100vw;
+  z-index: 1000;
+  min-height: 50px;
 }
 
-.header__add-icon {
-  font-size: 2rem;
+.header__filter-color {
+  border: 4px solid #fff;
+}
+
+.header__top-name {
+  font-size: 1.3rem;
+}
+
+.header__top-icon {
+  font-size: 1.7rem;
   color: #fff;
 }
 
-.card-title {
+.header__top-link:hover {
+  text-decoration: none;
+}
+
+.notes__section {
+  font-size: 1.2rem;
+}
+
+.note {
+  background-color: #525760;
+  color: #fff;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  min-height: 250px;
+  position: relative;
+}
+
+.note:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.note__title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.note__content {
+  font-size: 0.9rem;
+}
+
+.note__icon {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.note__icon:hover {
+  cursor: pointer;
+}
+
+.note__date {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.note__bottom-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.note__form {
+  background-color: #525760;
+}
+
+.note__form-btn {
   font-size: 1.1rem;
+  background-color: #f8fafc;
 }
 
 .footer {
@@ -10689,34 +10760,5 @@ body {
   background-color: #374B4A;
   width: 100vw;
   font-weight: 600;
-}
-
-.note {
-  background-color: #525760;
-  color: #fff;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.note:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.note__icon {
-  font-size: 1.3rem;
-  color: #fff;
-}
-
-.note_date {
-  font-weight: 700;
-}
-
-.note__form {
-  background-color: #525760;
-}
-
-.note__form-btn {
-  font-size: 1.1rem;
-  background-color: #f8fafc;
 }
 

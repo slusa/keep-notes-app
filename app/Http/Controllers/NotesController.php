@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreNoteRequest;
 use App\Note;
+use App\Color;
 use Illuminate\Support\Facades\Auth;
 use Session;
 
@@ -22,11 +23,13 @@ class NotesController extends Controller
     public function index()
     {
         $id = Auth::id();
-        $notes = Note::orderBy('priority', 'DESC')->orderBy('title')->get()->where('user_id', $id);
-        if (count($notes) == 0) {
+        $notesLow = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 0);
+        $notesHigh = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 1);
+        $colors = Color::pluck('hashtag','color')->all();
+        if (count($notesLow) + count($notesHigh) == 0) {
             return view('notes.empty');
         } else {
-            return view('notes.index')->with('notes', $notes);
+            return view('notes.index', compact('notesLow', 'notesHigh', 'colors'));
         }
     }
 
@@ -39,7 +42,8 @@ class NotesController extends Controller
     {
         Session::flash('note_adding', 'yes');
         Session::forget('note_editing');
-        return view('notes.add');
+        $colors = Color::pluck('color','hashtag')->all();
+        return view('notes.add')->with('colors', $colors);
     }
 
     /**
@@ -64,8 +68,9 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
+        $colors = Color::pluck('color','hashtag')->all();
         Session::flash('note_editing', 'yes');
-        return view('notes.edit')->with('note', $note);
+        return view('notes.edit', compact('note', 'colors'));
     }
 
     /**
@@ -127,6 +132,20 @@ class NotesController extends Controller
         $note->color = $request->color;
         $note->save();
         return redirect('notes');
+    }
+
+    // Filter color
+    public function filterColor($color)
+    {
+        $id = Auth::id();
+        $notesLow = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 0)->where('color', $color);
+        $notesHigh = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 1)->where('color', $color);
+        $colors = Color::pluck('hashtag','color')->all();
+        if (count($notesLow) + count($notesHigh) == 0) {
+            return view('notes.empty', compact('colors'));
+        } else {
+            return view('notes.index', compact('notesLow', 'notesHigh', 'colors'));
+        }
     }
 
 }
