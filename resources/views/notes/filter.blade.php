@@ -1,17 +1,7 @@
-@extends('master')
-@section('filter')
-
-
-<div class="modal-footer d-flex justify-content-center flex-wrap pt-5 mt-5">
-    <p>lorem</p>
-
+<div class="row header__filter p-1 pl-2 pr-2 w-100 d-flex justify-content-center flex-wrap">
     @foreach ($colors as $color)
-        {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}
-            <input name="color" value="{{ $color }}" type="hidden">
-            <button type="submit" class="btn m-1 p-3 text-white" style="background-color: {{ $color }};"></button>
-        {!! Form::close() !!}
+        <a href="{{ url('notes/filterColor', $color) }}" title="Filtruj po kolorze">
+            <button type="button" class="header__filter-color btn m-1 p-3" style="background-color: {{ $color }};"></button>
+        </a>
     @endforeach
-    </form>
 </div>
-
-@endsection
