@@ -3,6 +3,7 @@
 
 
 <div class="modal-footer d-flex justify-content-center flex-wrap pt-5 mt-5">
+    <p>lorem</p>
 
     @foreach ($colors as $color)
         {!! Form::open(['method' => 'POST', 'action' => ['NotesController@changeColor', $note->id]]) !!}

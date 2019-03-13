@@ -134,6 +134,20 @@ class NotesController extends Controller
         return redirect('notes');
     }
 
+    // Filter color
+    public function filterColor($color)
+    {
+        $id = Auth::id();
+        $notesLow = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 0)->where('color', $color);
+        $notesHigh = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 1)->where('color', $color);
+        $colors = Color::pluck('hashtag','color')->all();
+        if (count($notesLow) + count($notesHigh) == 0) {
+            return view('notes.empty');
+        } else {
+            return view('notes.index', compact('notesLow', 'notesHigh', 'colors'));
+        }
+    }
+
 }
 
 
