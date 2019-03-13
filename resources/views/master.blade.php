@@ -13,11 +13,11 @@
             <header>
                 <div class="row header p-1 pl-2 pr-2 w-100">
                     <div class="col-9 col-sm-5 col-md-4 col-lg-3 col-xl-2 p-0 d-flex align-items-center">
-                        <a href="{{ url('notes') }}" title="Pilnuj swoich notatek!" class="d-flex align-items-center header__app"><i class="mr-2 far fa-sticky-note header__top-icon"></i> <h1 class="m-0 text-white header__app-name">Keep notes</h1></a>
+                        <a href="{{ url('notes') }}" title="Pilnuj swoich notatek!" class="d-flex align-items-center header__top-link"><i class="mr-2 far fa-sticky-note header__top-icon"></i> <h1 class="m-0 text-white header__top-name">Keep notes</h1></a>
                     </div>
                     <div class="col-3 col-sm-7 col-md-8 col-lg-9 col-xl-10 p-0 d-flex align-items-center justify-content-end">
-                        <a href="{{ url('notes/create') }}" class="mr-2" title="Utwórz notatkę"><i class="p-2 d-flex align-items-center far fa-plus-square header__top-icon"></i></a>
-                        <a href="{{ url('logout') }}" title="Wyloguj się"><i class="p-2 d-flex align-items-center fas fa-sign-out-alt header__top-icon"></i></a>
+                        <a href="{{ url('notes/create') }}" class="mr-2 header__top-link" title="Utwórz notatkę"><i class="p-2 d-flex align-items-center far fa-plus-square header__top-icon"></i></a>
+                        <a href="{{ url('logout') }}" class="header__top-link" title="Wyloguj się"><i class="p-2 d-flex align-items-center fas fa-sign-out-alt header__top-icon"></i></a>
                     </div>
                 </div>
             </header>

@@ -2,7 +2,7 @@
 @section('content')
 
 @if (count($notesHigh) != 0)
-<h2 class="notes__section text-secondary mt-3">Notatki ważniejsze</h2>
+<h2 class="notes__section text-secondary mt-4">Notatki ważniejsze</h2>
 <div class="row pb-5 pt-1">
     @foreach ($notesHigh as $note)
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2 mb-2 pl-2 pr-2">
@@ -14,11 +14,11 @@
                             <a href="{{ url('notes/changePriority', $note->id) }}">
                                 @switch($note->priority)
                                     @case(0)
-                                        <i class="p-2 pr-3 note__icon far fa-star"></i>
+                                        <i class="p-2 mr-2 note__icon far fa-star"></i>
                                         @break
 
                                     @case(1)
-                                        <i class="p-2 pr-3 note__icon fas fa-star"></i>
+                                        <i class="p-2 mr-2 note__icon fas fa-star"></i>
                                         @break
                                     @default
                                 @endswitch
@@ -86,7 +86,7 @@
 
 
 @if (count($notesLow) != 0)
-<h2 class="notes__section text-secondary mt-3">Notatki mniej ważne</h2>
+<h2 class="notes__section text-secondary mt-4">Notatki mniej ważne</h2>
 <div class="row pb-5 pt-1">
     @foreach ($notesLow as $note)
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2 mb-2 pl-2 pr-2">

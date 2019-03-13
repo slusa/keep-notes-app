@@ -14,17 +14,17 @@ html, body {
     height: 50px;
 }
 
-.header__app:hover {
-    text-decoration: none;
-}
-
-.header__app-name {
+.header__top-name {
     font-size: 1.3rem;
 }
 
 .header__top-icon {
     font-size: 1.7rem;
     color: #fff;
+}
+
+.header__top-link:hover {
+    text-decoration: none;
 }
 
 .notes__section {

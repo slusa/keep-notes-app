@@ -20,17 +20,15 @@
 
 @if (Session::has('note_editing'))
     <div class="form-group">
-        {!! Form::label('color', 'Priorytet: '); !!}
-        <br/>
+        {!! Form::label('color', 'Priorytet: ', ['class' => 'mr-3']); !!}
         {!! Form::radio('priority', 0) !!} niski
-        {!! Form::radio('priority', 1) !!} wysoki
+        {!! Form::radio('priority', 1, null, ['class' => 'ml-3']) !!} wysoki
     </div>
 @elseif (Session::has('note_adding'))
     <div class="form-group">
-        {!! Form::label('color', 'Priorytet: '); !!}
-        <br/>
+        {!! Form::label('color', 'Priorytet: ', ['class' => 'mr-3']); !!}
         {!! Form::radio('priority', 0, true) !!} niski
-        {!! Form::radio('priority', 1) !!} wysoki
+        {!! Form::radio('priority', 1, null, ['class' => 'ml-3']) !!} wysoki
     </div>
 @endif
 
