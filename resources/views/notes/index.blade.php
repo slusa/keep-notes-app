@@ -1,13 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="row header__filter p-1 pl-2 pr-2 w-100 d-flex justify-content-center flex-wrap">
-    @foreach ($colors as $color)
-        <a href="{{ url('notes/filterColor', $color) }}" title="Filtruj po kolorze">
-            <button type="button" class="header__filter-color btn m-1 p-3" style="background-color: {{ $color }};"></button>
-        </a>
-    @endforeach
-</div>
+@include('notes.filter')
 
 <div class="notes__content mt-5 pt-5 pt-sm-1">
     @if (count($notesHigh) != 0)
@@ -34,7 +28,7 @@
                                 <a href="{{ url('notes', $note->id) }}" title="Edytuj"><i class="p-2 note__icon fas fa-pencil-alt"></i></a>
                             </div>
                         </div>
-                        <p class="card-text pr-2 pl-2 pb-4 text-justify note__content">{{ str_limit($note->content, 300) }}</p>
+                        <p class="card-text pr-2 pl-2 pb-4 text-justify note__content">{!! nl2br(str_limit($note->content, 300)) !!}</p>
                         <div class="d-flex justify-content-between align-items-center note__bottom-section">
                             <i class="p-2 note__icon fas fa-trash-alt deleteModal" data-toggle="modal" data-target="#deleteModal" data-id="{{ $note->id }}" data-title="{{ $note->title }}" data-delete-link="{{ route('notes.destroy', $note->id) }}" data-color="{{ $note->color }}"></i>
                             <p class="text-center note__date mb-0">{{ $note->updated_at->format('Y-m-d H:i') }}</p>
@@ -176,7 +170,6 @@
     </div>
     @endif
 </div>
-
 
 @endsection
 
