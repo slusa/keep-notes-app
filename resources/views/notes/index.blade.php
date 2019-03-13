@@ -5,7 +5,7 @@
 
 <div class="notes__content mt-5 pt-5 pt-sm-1">
     @if (count($notesHigh) != 0)
-    <h2 class="notes__section text-secondary mt-2 pt-3">Notatki ważniejsze</h2>
+    <h2 class="notes__section text-secondary mt-2 pt-3">Wysoki priorytet</h2>
     <div class="row pb-5 pt-1">
         @foreach ($notesHigh as $note)
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2 mb-2 pl-2 pr-2">
@@ -88,7 +88,7 @@
     @endif
 
     @if (count($notesLow) != 0)
-    <h2 class="notes__section text-secondary mt-2 pt-3">Notatki mniej ważne</h2>
+    <h2 class="notes__section text-secondary mt-2 pt-3">Niski priorytet</h2>
     <div class="row pb-5 pt-1">
         @foreach ($notesLow as $note)
             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2 mb-2 pl-2 pr-2">
