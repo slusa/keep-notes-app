@@ -10669,6 +10669,7 @@ body {
   position: fixed;
   width: 100vw;
   z-index: 1000;
+  height: 50px;
 }
 
 .header__app:hover {
@@ -10676,16 +10677,16 @@ body {
 }
 
 .header__app-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .header__top-icon {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   color: #fff;
 }
 
 .notes__section {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 
 .note {
