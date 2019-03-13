@@ -142,7 +142,7 @@ class NotesController extends Controller
         $notesHigh = Note::orderBy('title')->get()->where('user_id', $id)->where('priority', 1)->where('color', $color);
         $colors = Color::pluck('hashtag','color')->all();
         if (count($notesLow) + count($notesHigh) == 0) {
-            return view('notes.empty');
+            return view('notes.empty', compact('colors'));
         } else {
             return view('notes.index', compact('notesLow', 'notesHigh', 'colors'));
         }
